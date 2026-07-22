@@ -12,10 +12,10 @@ Copyright (c) 2026 Riadh MNASRI. All rights reserved.
   - **Explorer (age 6)**: what money is for, the piggy bank, needs vs wants
   - **Adventurer (age 8)**: comparing prices, simple budgeting, avoiding impulse buys
   - **Strategist (age 11)**: income vs expenses, the concept of interest, monthly budgets, financial priorities
-- **Daily missions**: 6 multiple-choice questions randomly drawn from the profile's question bank, each followed by a pedagogical explanation.
+- **Daily missions**: 6 multiple-choice questions randomly drawn from the profile's question bank (16 questions per age group), each followed by a pedagogical explanation.
 - **Virtual piggy bank**: correct answers fill the piggy bank (SouSous) toward visual milestones (a progress ring).
 - **Progression**: levels with an increasing XP curve, a play streak with one tolerated joker day per week.
-- **Badges**: milestones to unlock (first mission, 3/7/30-day streaks, full piggy bank, perfect round, levels 5 and 10).
+- **Badges**: 18 milestones to unlock (3/7/14/30/100-day streaks, full piggy bank at 100/500/1000/2000 SouSous, perfect round, 5 perfect rounds, 10/50 missions completed, levels 5/10/15/20).
 - **Parents area**: a read-only overview of all 3 profiles (level, streak, piggy bank, badges), with no intrusive tracking.
 - **Bilingual**: the full interface exists in French and English, switch instantly from the header.
 
@@ -91,9 +91,9 @@ vercel --prod
 
 ## Progress
 
-- [x] 3 child profiles with age-appropriate content
+- [x] 3 child profiles with age-appropriate content (16 questions per age group)
 - [x] Daily missions (quizzes) with pedagogical explanations
-- [x] Virtual piggy bank, levels, play streak, badges
+- [x] Virtual piggy bank, levels, play streak, 18 badges
 - [x] Parents area (read-only, no intrusive tracking)
 - [x] Bilingual French / English interface
 - [x] Production deployment on Vercel

@@ -22,7 +22,7 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: "SouSou : l'argent, en s'amusant",
   description:
-    "SouSou apprend aux enfants a gerer leur argent de poche avec des missions ludiques, sans recompenses reelles.",
+    "SouSou apprend aux enfants à gérer leur argent de poche avec des missions ludiques, sans récompenses réelles.",
 };
 
 export function generateStaticParams() {

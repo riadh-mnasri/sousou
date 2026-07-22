@@ -7,7 +7,7 @@
   },
   "home": {
     "title": "Bienvenue sur SouSou",
-    "subtitle": "Apprends a gerer ton argent en t'amusant !",
+    "subtitle": "Apprends à gérer ton argent en t'amusant !",
     "choose": "Qui joue aujourd'hui ?",
     "yearsOld": "ans",
     "continue": "Continuer",
@@ -17,11 +17,11 @@
   "dashboard": {
     "piggyBank": "Ta tirelire",
     "level": "Niveau",
-    "streak": "Serie",
+    "streak": "Série",
     "streakDays": "jours de suite",
     "streakDay": "jour de suite",
     "startMission": "Commencer la mission du jour",
-    "playedToday": "Mission du jour deja terminee !",
+    "playedToday": "Mission du jour déjà terminée !",
     "badges": "Tes badges",
     "seeAllBadges": "Voir tous les badges",
     "xpToNext": "XP jusqu'au niveau suivant",
@@ -35,34 +35,34 @@
     "of": "sur",
     "check": "Valider",
     "next": "Question suivante",
-    "correct": "Bonne reponse !",
-    "incorrect": "Pas tout a fait...",
-    "finish": "Voir mes resultats",
-    "recapTitle": "Bravo, mission terminee !",
-    "coinsEarned": "SouSous gagnes",
-    "xpEarned": "XP gagne",
-    "correctAnswers": "bonnes reponses",
-    "perfect": "Sans faute ! Un badge special t'attend.",
+    "correct": "Bonne réponse !",
+    "incorrect": "Pas tout à fait...",
+    "finish": "Voir mes résultats",
+    "recapTitle": "Bravo, mission terminée !",
+    "coinsEarned": "SouSous gagnés",
+    "xpEarned": "XP gagné",
+    "correctAnswers": "bonnes réponses",
+    "perfect": "Sans faute ! Un badge spécial t'attend.",
     "backToDashboard": "Retour au tableau de bord",
-    "newBadge": "Nouveau badge debloque !"
+    "newBadge": "Nouveau badge débloqué !"
   },
   "badges": {
     "title": "Tes badges",
-    "locked": "A debloquer",
-    "unlocked": "Debloque",
+    "locked": "À débloquer",
+    "unlocked": "Débloqué",
     "back": "Retour"
   },
   "parents": {
     "title": "Espace parents",
-    "subtitle": "Un apercu de la progression de chaque enfant, sans surveillance intrusive.",
+    "subtitle": "Un aperçu de la progression de chaque enfant, sans surveillance intrusive.",
     "level": "Niveau",
-    "streak": "Serie",
+    "streak": "Série",
     "days": "jours",
     "day": "jour",
     "piggyBank": "Tirelire",
-    "badgesUnlocked": "Badges debloques",
+    "badgesUnlocked": "Badges débloqués",
     "viewProfile": "Voir le profil",
-    "noActivity": "N'a pas encore commence"
+    "noActivity": "N'a pas encore commencé"
   },
   "common": {
     "back": "Retour"
