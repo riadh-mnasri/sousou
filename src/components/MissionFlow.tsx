@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import type { Profile } from "@/lib/profiles";
-import { getQuestionsForTier, type Question } from "@/lib/content/questions";
+import { getQuestionsForTier, shuffleQuestionOptions, type Question } from "@/lib/content/questions";
 import { shuffle } from "@/lib/shuffle";
 import {
   COINS_PER_CORRECT,
@@ -37,7 +37,11 @@ export function MissionFlow({ profile }: { profile: Profile }) {
     // The question order is randomized on purpose; picking it after mount
     // (instead of during render) avoids a server/client hydration mismatch.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setQuestions(shuffle(getQuestionsForTier(profile.tier)).slice(0, QUESTIONS_PER_MISSION));
+    setQuestions(
+      shuffle(getQuestionsForTier(profile.tier))
+        .slice(0, QUESTIONS_PER_MISSION)
+        .map(shuffleQuestionOptions)
+    );
   }, [profile.tier]);
 
   if (!questions) {

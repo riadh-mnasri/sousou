@@ -1,4 +1,5 @@
 import type { Tier } from "../profiles";
+import { shuffle } from "../shuffle";
 
 export type LocalizedText = { fr: string; en: string };
 
@@ -885,4 +886,11 @@ export const QUESTIONS: Question[] = [
 
 export function getQuestionsForTier(tier: Tier): Question[] {
   return QUESTIONS.filter((question) => question.tier === tier);
+}
+
+export function shuffleQuestionOptions(question: Question): Question {
+  const order = shuffle(question.options.map((_, i) => i));
+  const options = order.map((i) => question.options[i]);
+  const correctIndex = order.indexOf(question.correctIndex);
+  return { ...question, options, correctIndex };
 }
