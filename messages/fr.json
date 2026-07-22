@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "appName": "SouSou",
+    "switchProfile": "Changer de profil",
+    "parents": "Espace parents",
+    "language": "Langue"
+  },
+  "home": {
+    "title": "Bienvenue sur SouSou",
+    "subtitle": "Apprends a gerer ton argent en t'amusant !",
+    "choose": "Qui joue aujourd'hui ?",
+    "yearsOld": "ans",
+    "continue": "Continuer",
+    "play": "Jouer",
+    "levelShort": "Niv."
+  },
+  "dashboard": {
+    "piggyBank": "Ta tirelire",
+    "level": "Niveau",
+    "streak": "Serie",
+    "streakDays": "jours de suite",
+    "streakDay": "jour de suite",
+    "startMission": "Commencer la mission du jour",
+    "playedToday": "Mission du jour deja terminee !",
+    "badges": "Tes badges",
+    "seeAllBadges": "Voir tous les badges",
+    "xpToNext": "XP jusqu'au niveau suivant",
+    "coins": "SouSous",
+    "untilMilestone": "SouSous avant le prochain palier",
+    "switchProfileCta": "Changer d'enfant"
+  },
+  "mission": {
+    "title": "Mission du jour",
+    "question": "Question",
+    "of": "sur",
+    "check": "Valider",
+    "next": "Question suivante",
+    "correct": "Bonne reponse !",
+    "incorrect": "Pas tout a fait...",
+    "finish": "Voir mes resultats",
+    "recapTitle": "Bravo, mission terminee !",
+    "coinsEarned": "SouSous gagnes",
+    "xpEarned": "XP gagne",
+    "correctAnswers": "bonnes reponses",
+    "perfect": "Sans faute ! Un badge special t'attend.",
+    "backToDashboard": "Retour au tableau de bord",
+    "newBadge": "Nouveau badge debloque !"
+  },
+  "badges": {
+    "title": "Tes badges",
+    "locked": "A debloquer",
+    "unlocked": "Debloque",
+    "back": "Retour"
+  },
+  "parents": {
+    "title": "Espace parents",
+    "subtitle": "Un apercu de la progression de chaque enfant, sans surveillance intrusive.",
+    "level": "Niveau",
+    "streak": "Serie",
+    "days": "jours",
+    "day": "jour",
+    "piggyBank": "Tirelire",
+    "badgesUnlocked": "Badges debloques",
+    "viewProfile": "Voir le profil",
+    "noActivity": "N'a pas encore commence"
+  },
+  "common": {
+    "back": "Retour"
+  }
+}

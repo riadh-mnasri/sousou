@@ -1,0 +1,28 @@
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+
+export function Header() {
+  const t = useTranslations("nav");
+
+  return (
+    <header className="w-full px-4 sm:px-6 py-4 flex items-center justify-between">
+      <Link
+        href="/"
+        className="font-heading text-2xl sm:text-3xl font-bold text-coral-dark flex items-center gap-2"
+      >
+        <span aria-hidden>🐱</span>
+        {t("appName")}
+      </Link>
+      <div className="flex items-center gap-3 sm:gap-4">
+        <Link
+          href="/parents"
+          className="text-sm sm:text-base font-semibold text-foreground/70 hover:text-foreground transition-colors"
+        >
+          {t("parents")}
+        </Link>
+        <LanguageSwitcher />
+      </div>
+    </header>
+  );
+}

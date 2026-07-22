@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "appName": "SouSou",
+    "switchProfile": "Switch profile",
+    "parents": "Parents area",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Welcome to SouSou",
+    "subtitle": "Learn to manage your money while having fun!",
+    "choose": "Who's playing today?",
+    "yearsOld": "years old",
+    "continue": "Continue",
+    "play": "Play",
+    "levelShort": "Lvl"
+  },
+  "dashboard": {
+    "piggyBank": "Your piggy bank",
+    "level": "Level",
+    "streak": "Streak",
+    "streakDays": "days in a row",
+    "streakDay": "day in a row",
+    "startMission": "Start today's mission",
+    "playedToday": "Today's mission is already done!",
+    "badges": "Your badges",
+    "seeAllBadges": "See all badges",
+    "xpToNext": "XP to next level",
+    "coins": "SouSous",
+    "untilMilestone": "SouSous until the next milestone",
+    "switchProfileCta": "Switch child"
+  },
+  "mission": {
+    "title": "Today's mission",
+    "question": "Question",
+    "of": "of",
+    "check": "Check",
+    "next": "Next question",
+    "correct": "Correct!",
+    "incorrect": "Not quite...",
+    "finish": "See my results",
+    "recapTitle": "Well done, mission complete!",
+    "coinsEarned": "SouSous earned",
+    "xpEarned": "XP earned",
+    "correctAnswers": "correct answers",
+    "perfect": "Perfect round! A special badge is waiting for you.",
+    "backToDashboard": "Back to dashboard",
+    "newBadge": "New badge unlocked!"
+  },
+  "badges": {
+    "title": "Your badges",
+    "locked": "To unlock",
+    "unlocked": "Unlocked",
+    "back": "Back"
+  },
+  "parents": {
+    "title": "Parents area",
+    "subtitle": "A quick look at each child's progress, without intrusive tracking.",
+    "level": "Level",
+    "streak": "Streak",
+    "days": "days",
+    "day": "day",
+    "piggyBank": "Piggy bank",
+    "badgesUnlocked": "Badges unlocked",
+    "viewProfile": "View profile",
+    "noActivity": "Hasn't started yet"
+  },
+  "common": {
+    "back": "Back"
+  }
+}

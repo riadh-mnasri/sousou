@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SouSou
 
-## Getting Started
+Une application ludique pour apprendre aux enfants a bien gerer leur argent, a travers des missions quotidiennes, une tirelire virtuelle qui grossit et des badges a debloquer, sans jamais utiliser d'argent reel ni de recompenses reelles comme mecanique de motivation.
 
-First, run the development server:
+## Pourquoi cette app
+
+SouSou propose 3 profils enfant (adaptes par tranche d'age : 6, 8 et 11 ans) avec un contenu pedagogique different pour chacun :
+
+- **Explorateur (6 ans)** : c'est quoi l'argent, la tirelire, besoins vs envies
+- **Aventurier (8 ans)** : comparer les prix, faire un petit budget, eviter les achats impulsifs
+- **Strategiste (11 ans)** : revenu vs depense, notion d'interet, budget mensuel, priorites financieres
+
+Chaque jour, l'enfant peut faire une mission de 6 questions. Les bonnes reponses remplissent sa tirelire virtuelle (SouSous) et font progresser son niveau et sa serie de jours joues. Des badges recompensent les jalons (streak, tirelire pleine, sans-faute, niveaux).
+
+## Choix de conception : pas de recompenses reelles
+
+Toute la motivation repose sur la progression virtuelle (SouSous, niveaux, badges) et non sur de l'argent de poche reel ou des recompenses materielles automatisees, pour eviter l'effet de sur-justification et garder le plaisir d'apprendre intact.
+
+## Stack technique
+
+- Next.js 16 (App Router, Turbopack)
+- TypeScript
+- Tailwind CSS v4
+- next-intl (interface bilingue francais/anglais)
+- Persistance locale via `localStorage` (aucune base de donnees, aucune donnee envoyee a un serveur)
+
+## Developpement local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'application est servie sur [http://localhost:3939](http://localhost:3939).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Aucune suite de tests automatises pour le moment (contenu pedagogique et logique de jeu simples, verifies manuellement en navigateur).
 
-## Learn More
+## Deploiement
 
-To learn more about Next.js, take a look at the following resources:
+Deploiement prevu sur Vercel, lie au repo GitHub `riadh-mnasri/sousou`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Etat d'avancement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] 3 profils enfant avec contenu adapte par age
+- [x] Missions quotidiennes (quiz) avec explications pedagogiques
+- [x] Tirelire virtuelle, niveaux, serie de jours, badges
+- [x] Espace parents (lecture seule, sans surveillance intrusive)
+- [x] Interface bilingue francais / anglais
+- [ ] Favicon et icone d'application personnalises
+- [ ] Contenu pedagogique additionnel (plus de questions par tranche d'age)
 
-## Deploy on Vercel
+## Copyright
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 Riadh MNASRI
