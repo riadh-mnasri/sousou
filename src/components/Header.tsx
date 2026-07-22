@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { CatMascot } from "./CatMascot";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -11,7 +12,7 @@ export function Header() {
         href="/"
         className="font-heading text-2xl sm:text-3xl font-bold text-coral-dark flex items-center gap-2"
       >
-        <span aria-hidden>🐱</span>
+        <CatMascot mood="happy" className="h-9 w-9 sm:h-10 sm:w-10" />
         {t("appName")}
       </Link>
       <div className="flex items-center gap-3 sm:gap-4">

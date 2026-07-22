@@ -1,3 +1,5 @@
+import { CatMascot } from "./CatMascot";
+
 export function PiggyBank({
   coins,
   milestone,
@@ -18,8 +20,8 @@ export function PiggyBank({
         background: `conic-gradient(${color} ${progress}%, #f0e3cc ${progress}% 100%)`,
       }}
     >
-      <div className="flex h-28 w-28 items-center justify-center rounded-full bg-card text-6xl animate-piggy-bounce">
-        🐱
+      <div className="flex h-28 w-28 items-center justify-center rounded-full bg-card p-3 animate-piggy-bounce">
+        <CatMascot mood={progress >= 66 ? "happy" : "idle"} />
       </div>
     </div>
   );

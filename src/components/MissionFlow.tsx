@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import type { Profile } from "@/lib/profiles";
@@ -15,6 +15,8 @@ import {
 import { applyMissionResult, loadProfileState } from "@/lib/storage";
 import { getBadge } from "@/lib/badges";
 import { BadgeChip } from "@/components/BadgeChip";
+import { CatMascot } from "@/components/CatMascot";
+import { Confetti } from "@/components/Confetti";
 
 const QUESTIONS_PER_MISSION = 6;
 
@@ -23,15 +25,28 @@ export function MissionFlow({ profile }: { profile: Profile }) {
   const locale = useLocale() as "fr" | "en";
   const router = useRouter();
 
-  const [questions] = useState<Question[]>(() =>
-    shuffle(getQuestionsForTier(profile.tier)).slice(0, QUESTIONS_PER_MISSION)
-  );
+  const [questions, setQuestions] = useState<Question[] | null>(null);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [done, setDone] = useState(false);
   const [newBadgeIds, setNewBadgeIds] = useState<string[]>([]);
   const [result, setResult] = useState<{ coins: number; xp: number } | null>(null);
+
+  useEffect(() => {
+    // The question order is randomized on purpose; picking it after mount
+    // (instead of during render) avoids a server/client hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setQuestions(shuffle(getQuestionsForTier(profile.tier)).slice(0, QUESTIONS_PER_MISSION));
+  }, [profile.tier]);
+
+  if (!questions) {
+    return (
+      <div className="max-w-xl mx-auto px-4 py-16 text-center">
+        <CatMascot mood="idle" className="h-20 w-20 mx-auto" />
+      </div>
+    );
+  }
 
   const current = questions[index];
   const isLast = index === questions.length - 1;
@@ -55,18 +70,19 @@ export function MissionFlow({ profile }: { profile: Profile }) {
   }
 
   function finishMission() {
+    const missionQuestions = questions!;
     const finalCorrect = correctCount;
-    const perfect = finalCorrect === questions.length;
+    const perfect = finalCorrect === missionQuestions.length;
     const earnedXp = finalCorrect * XP_PER_CORRECT + (perfect ? PERFECT_BONUS_XP : 0);
     const earnedCoins = finalCorrect * COINS_PER_CORRECT + (perfect ? PERFECT_BONUS_COINS : 0);
     const before = loadProfileState(profile.id);
     const after = applyMissionResult(
       profile.id,
       finalCorrect,
-      questions.length,
+      missionQuestions.length,
       earnedXp,
       earnedCoins,
-      questions.map((q) => q.id)
+      missionQuestions.map((q) => q.id)
     );
     setNewBadgeIds(after.badges.filter((id) => !before.badges.includes(id)));
     setResult({ coins: earnedCoins, xp: earnedXp });
@@ -77,9 +93,8 @@ export function MissionFlow({ profile }: { profile: Profile }) {
     const perfect = correctCount === questions.length;
     return (
       <div className="max-w-xl mx-auto px-4 py-12 text-center animate-pop-in">
-        <div className="text-6xl mb-4" aria-hidden>
-          {perfect ? "🏆" : "🎉"}
-        </div>
+        <Confetti pieces={perfect ? 48 : 28} />
+        <CatMascot mood="excited" className="h-28 w-28 mx-auto mb-4" />
         <h1 className="font-heading text-2xl sm:text-3xl font-extrabold mb-6">
           {t("recapTitle")}
         </h1>
@@ -170,14 +185,20 @@ export function MissionFlow({ profile }: { profile: Profile }) {
 
       {selected !== null && (
         <div
-          className={`rounded-2xl p-4 mb-6 animate-pop-in ${
+          className={`flex items-start gap-3 rounded-2xl p-4 mb-6 animate-pop-in ${
             isCorrect ? "bg-mint/15 border-2 border-mint" : "bg-coral/10 border-2 border-coral"
           }`}
         >
-          <p className={`font-heading font-bold mb-1 ${isCorrect ? "text-mint-dark" : "text-coral-dark"}`}>
-            {isCorrect ? t("correct") : t("incorrect")}
-          </p>
-          <p className="text-sm text-foreground/80">{current.explanation[locale]}</p>
+          <CatMascot
+            mood={isCorrect ? "happy" : "thinking"}
+            className="h-12 w-12 shrink-0"
+          />
+          <div>
+            <p className={`font-heading font-bold mb-1 ${isCorrect ? "text-mint-dark" : "text-coral-dark"}`}>
+              {isCorrect ? t("correct") : t("incorrect")}
+            </p>
+            <p className="text-sm text-foreground/80">{current.explanation[locale]}</p>
+          </div>
         </div>
       )}
 
